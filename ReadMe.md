@@ -2,12 +2,6 @@ Objective-C-Style-Guide
 =======================
 
 This is my preferred Objective-C style guide, in Pages (source) and PDF formats. Feel free to use it or adopt it for your own needs.
-Brew_Log
-========
-
-iOS App Store first app
-
-# Objective-C Style Guide
 
 #### Why Do We Need A Style Guide?
 
