@@ -104,6 +104,7 @@ Be sure to include the dash so a divider line is added to the drop-down menu in 
 ```
 
 Place two blank lines above and below each ```#pragma mark```.
+
 Do not use the older-style two-line #pragma marks.
 
 ###### RIGHT:
@@ -476,7 +477,7 @@ Properties that conform to ```NSCopying``` should generally copy rather than ret
 
 #### IBActions
 
-Do not use the (id)sender parameter in an IBAction method signature unless it’s needed. If it is needed, you can specify the parameter type (e.g. UIButton) rather than using id. Use id only when creating very generic actions where you don’t know in advance the type of control that will trigger it, but still need a reference to it.
+Do not use the ```(id)sender``` parameter in an IBAction method signature unless it’s needed. If it is needed, you can specify the parameter type (e.g. UIButton) rather than using ```id```. Use ```id``` only when creating very generic actions where you don’t know in advance the type of control that will trigger it, but still need a reference to it.
 
 ###### RIGHT:
 ```objective-c
@@ -491,7 +492,7 @@ Do not use the (id)sender parameter in an IBAction method signature unless it’
 
 #### Comparisons
 
-Compare objects to nil, rather than just testing the object directly. This makes it obvious that the property is an object, as opposed to a Boolean value.
+Compare objects to ```nil```, rather than just testing the object directly. This makes it obvious that the property is an object, as opposed to a Boolean value.
 
 ###### RIGHT:
 ```objective-c
@@ -507,7 +508,7 @@ if (anObject) {
 }
 ```
 
-When testing the existence of an object, nil belongs to the right of the ```==``` operator.
+When testing the existence of an object, ```nil``` belongs to the right of the ```==``` operator.
 
 ###### RIGHT:
 ```objective-c
@@ -570,9 +571,7 @@ count ++;
 
 Follow the Constants section in Apple’s Introduction to Coding Guidelines for Cocoa when naming constants. Specifically:
 
-Constants should begin with the three-letter project prefix. Do not begin constants with the letter “k” in Objective-C code (that’s a C thing).
-
-Do not use all uppercase letters (that’s for creating preprocessor constants).
+Constants should begin with the three-letter project prefix. Do not begin constants with the letter “k” in Objective-C code (that’s a C thing). Do not use all uppercase letters (that’s for creating preprocessor constants). 
 
 Do not use ```#define``` to create constants.
 
