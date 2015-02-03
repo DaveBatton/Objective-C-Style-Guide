@@ -40,6 +40,7 @@ These conventions are not intended to be applied to C, C++, or Swift code within
 Use spaces, not tabs, to indent code. The indent size is 4 spaces. Code editors should be configured to convert tabs that you type to 4 spaces.
 
 Specifically, we’d like you to configure Xcode to handle indentation as shown here (from Xcode 4.4):
+![Xcode Indentation Preferences](/resources/Screen Shot 2012-08-08 at 10.46.36 PM.png)
 
 If you want to wrap a long line of code then make sure it is colon-aligned per Xcode’s automatic formatting.
 
