@@ -103,7 +103,7 @@ Be sure to include the dash so a divider line is added to the drop-down menu in 
 #pragma mark In App Purchase
 ```
 
-Place two blank lines above and below each ```#pragma mark```.
+Place two blank lines above and below each `#pragma mark`.
 
 Do not use the older-style two-line #pragma marks.
 
@@ -119,21 +119,26 @@ Do not use the older-style two-line #pragma marks.
 ```
 
 Many of the users of this guide have created code snippets in Xcode to simplify this process. Copy and paste the code below to create your own code snippets.
-```objective-c
-Title: All Class Pragma Marks
-Completion Shortcut: psec
-Platform: iOS
-Language: Objective-C
+
+Title: Pragma Mark Section<br>
+Completion Shortcut: psec<br>
+Platform: iOS<br>
+Language: Objective-C<br>
 Completion Scopes: Class Implementation
 
+```objective-c
 #pragma mark - <#SectionName#>
 
-Title: Pragma Mark Section
-Completion Shortcut: psecall
-Platform: iOS
-Language: Objective-C
+
+```
+
+Title: All Class Pragma Marks<br>
+Completion Shortcut: psecall<br>
+Platform: iOS<br>
+Language: Objective-C<br>
 Completion Scopes: Class Implementation
 
+```objective-c
 #pragma mark - Class Methods
 
 
@@ -242,7 +247,7 @@ In all cases, the closing bracket is always on a new line by itself.
 }
 ```
 
-Code within an ```if``` or ```for``` statement should aways be enclosed in brackets, even if not required by the compiler.
+Code within an `if` or `for` statement should aways be enclosed in brackets, even if not required by the compiler.
 
 ###### RIGHT:
 ```objective-c
@@ -358,9 +363,9 @@ NSInteger total = objectsArray.count;
 
 #### Variables
 
-Use ```NSInteger``` instead of ```int```, ```BOOL``` instead of ```Boolean```, etc.
+Use `NSInteger` instead of `int`, `BOOL` instead of `Boolean`, etc.
 
-Use ```CGFloat``` instead of ```float``` or ```double``` when working with views, drawing, or anywhere that Apple specifies a ```CGFloat``` value. For clarity, hard-code values to ```CGFloat``` using one decimal place and the float notation. Do not omit the leading zero in values less than one or the trailing zero for fractal values.
+Use `CGFloat` instead of `float` or `double` when working with views, drawing, or anywhere that Apple specifies a `CGFloat` value. For clarity, hard-code values to `CGFloat` using one decimal place and the float notation. Do not omit the leading zero in values less than one or the trailing zero for fractal values.
 
 ###### RIGHT:
 ```objective-c
@@ -376,9 +381,9 @@ CGFloat top = .0f;
 CGFloat top = 0f;
 ```
 
-Objective-C uses ```YES``` and ```NO``` for Boolean variables. Therefore, the use of ```True``` and ```False``` are incorrect in Objective-C code.
+Objective-C uses `YES` and `NO` for Boolean variables. Therefore, the use of `True` and `False` are incorrect in Objective-C code.
 
-Don’t directly access structure or object elements if getters & setters are available, except in ```-init``` and ```-dealloc``` methods, or when overriding accessor methods.
+Don’t directly access structure or object elements if getters & setters are available, except in `-init` and `-dealloc` methods, or when overriding accessor methods.
 
 ###### RIGHT:
 ```objective-c
@@ -436,7 +441,7 @@ Property definitions should be used rather than defining instance variables. Let
 
 Even for simple variables like Booleans (BOOL) or integers (NSInteger), use properties for consistency, not instance variables.
 
-Xcode no longer requires ```@synthesize``` statements. Use them only if you require a unique instance variable name. When using ```@synthesize``` and ```@dynamic```, place each one on a single line.
+Xcode no longer requires `@synthesize` statements. Use them only if you require a unique instance variable name. When using `@synthesize` and `@dynamic`, place each one on a single line.
 
 ###### RIGHT:
 ```objective-c
@@ -451,7 +456,7 @@ Xcode no longer requires ```@synthesize``` statements. Use them only if you requ
 @dynamic nameLabel, addressLabel;
 ```
 
-Except in ```-init``` and ```-dealloc``` methods, always use accessor methods, whether hard-coded (@dynamic) or synthesized, when setting and getting class instance variables.
+Except in `-init` and `-dealloc` methods, always use accessor methods, whether hard-coded (@dynamic) or synthesized, when setting and getting class instance variables.
 
 ###### RIGHT:
 ```objective-c
@@ -463,7 +468,7 @@ self.aProperty = something;
 _anInstanceVariable = something;
 ```
 
-Properties that conform to ```NSCopying``` should generally copy rather than retain the value.
+Properties that conform to `NSCopying` should generally copy rather than retain the value.
 
 ###### RIGHT:
 ```objective-c
@@ -477,7 +482,7 @@ Properties that conform to ```NSCopying``` should generally copy rather than ret
 
 #### IBActions
 
-Do not use the ```(id)sender``` parameter in an IBAction method signature unless it’s needed. If it is needed, you can specify the parameter type (e.g. UIButton) rather than using ```id```. Use ```id``` only when creating very generic actions where you don’t know in advance the type of control that will trigger it, but still need a reference to it.
+Do not use the `(id)sender` parameter in an IBAction method signature unless it’s needed. If it is needed, you can specify the parameter type (e.g. UIButton) rather than using `id`. Use `id` only when creating very generic actions where you don’t know in advance the type of control that will trigger it, but still need a reference to it.
 
 ###### RIGHT:
 ```objective-c
@@ -492,7 +497,7 @@ Do not use the ```(id)sender``` parameter in an IBAction method signature unless
 
 #### Comparisons
 
-Compare objects to ```nil```, rather than just testing the object directly. This makes it obvious that the property is an object, as opposed to a Boolean value.
+Compare objects to `nil`, rather than just testing the object directly. This makes it obvious that the property is an object, as opposed to a Boolean value.
 
 ###### RIGHT:
 ```objective-c
@@ -508,7 +513,7 @@ if (anObject) {
 }
 ```
 
-When testing the existence of an object, ```nil``` belongs to the right of the ```==``` operator.
+When testing the existence of an object, `nil` belongs to the right of the `==` operator.
 
 ###### RIGHT:
 ```objective-c
@@ -526,7 +531,7 @@ if (nil == anObject) {
 
 #### - dealloc
 
-Now that we’re using ARC, we’re no setting the object’s instance variables to ```nil``` in the ```-dealloc``` method. In most cases the method should be removed.
+Now that we’re using ARC, we’re no setting the object’s instance variables to `nil` in the `-dealloc` method. In most cases the method should be removed.
 
 
 #### Block Indentation
@@ -553,7 +558,7 @@ Unnecessary/unused code from Xcode templates should also be completely removed f
 
 #### Operators
 
-Use spaces around logical and arithmetic operators. However, no space should be used before the ```++``` and ```--```  operators.
+Use spaces around logical and arithmetic operators. However, no space should be used before the `++` and `--`  operators.
 
 ###### RIGHT:
 ```objective-c
@@ -573,7 +578,7 @@ Follow the Constants section in Apple’s Introduction to Coding Guidelines for 
 
 Constants should begin with the three-letter project prefix. Do not begin constants with the letter “k” in Objective-C code (that’s a C thing). Do not use all uppercase letters (that’s for creating preprocessor constants). 
 
-Do not use ```#define``` to create constants.
+Do not use `#define` to create constants.
 
 Integers, floats, and Boolean constants should look something like this:
 ```objective-c
