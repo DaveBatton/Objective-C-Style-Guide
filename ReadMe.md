@@ -65,7 +65,7 @@ All projects should adopt a three-letter prefix. We avoid two-letter prefixes to
 #### File Header Comments
 
 Each .h and .m file should begin with comments containing the file name and copyright information similar to this:
-``` Objective-C
+```objective-c
 //
 //  XXXNavigationController.h
 //
@@ -78,7 +78,7 @@ This is a modified version of the default comments added by Xcode. Notice the pr
 #### Pragma Marks
 
 Separate methods in the class implementation into groups using these #pragma marks:
-``` Objective-C
+```objective-c
 #pragma mark - Class Methods
 #pragma mark - Setup & Teardown
 #pragma mark - (superclass name)
@@ -95,7 +95,7 @@ Do not include a #pragma mark if there are no methods in that section.
 Generally these groups should appear in the order listed above. Additional groups may be inserted or appended where appropriate.
 
 Be sure to include the dash so a divider line is added to the drop-down menu in Xcode. Subcategories of major groups may be created without the dash.
-``` Objective-C
+```objective-c
 #pragma mark - Private
   ...
 #pragma mark Video Handling
@@ -107,18 +107,18 @@ Place two blank lines above and below each ```#pragma mark```.
 Do not use the older-style two-line #pragma marks.
 
 ###### RIGHT:
-``` Objective-C
+```objective-c
 #pragma mark - Setup & Teardown
 ```
 
 ###### WRONG:
-``` Objective-C
+```objective-c
 #pragma mark -
 #pragma mark Setup & Teardown
 ```
 
 Many of the users of this guide have created code snippets in Xcode to simplify this process. Copy and paste the code below to create your own code snippets.
-``` Objective-C
+```objective-c
 Title: All Class Pragma Marks
 Completion Shortcut: psec
 Platform: iOS
@@ -167,34 +167,34 @@ Completion Scopes: Class Implementation
 Method names should follow the conventions defined by the Cocoa libraries. They should almost never contain abbreviated words.
 
 ###### RIGHT:
-``` Objective-C
+```objective-c
 - (void)beginRegistrationWithNavigationController:(UINavigationController *)controller
 ```
 
 ###### WRONG:
-``` Objective-C
+```objective-c
 - (void)beginRegWithNavCon:(UINavigationController *)controller
 ```
 
 Be consistent. Similar methods that do the same thing in two different classes should probably have the same name.
 
 ###### EXAMPLE:
-``` Objective-C
+```objective-c
 (void)handleError:(ABCHTTPURLConnection *)connection withError:(NSError *)error
 ```
 
 Note that the first parameter is a connection, not an error. So better:
-``` Objective-C
+```objective-c
 - (void)handleConnection:(ABCHTTPURLConnection *)connection withError:(NSError *)error
 ```
 
 Apple generally doesn’t use “with” when returning an error value. Better still:
-``` Objective-C
+```objective-c
 - (void)handleConnection:(ABCHTTPURLConnection *)connection error:(NSError *)error
 ```
 
 This is a delegate method. Normally these contain “will” or “did”, and rarely start with “handle”:
-``` Objective-C
+```objective-c
 - (void)connection:(ABCHTTPURLConnection *)connection didFailWithError:(NSError *)error
 ```
 
@@ -207,12 +207,12 @@ Method names should never begin with the underscore character. This format is re
 Method signatures should have a space after the scope (the plus or the minus sign). There should be a space between the parameter type and pointer (asterisk) character. There should be a space between the method segments. Other than that there should be no spaces in the method signature.
 
 ###### RIGHT:
-``` Objective-C
+```objective-c
 - (void)setExample:(NSString *)example animated:(BOOL)animated;
 ```
 
 ###### WRONG:
-``` Objective-C
+```objective-c
 - (void) setExample:(NSString *)example animated:(BOOL)animated;
 -(void)setExample:(NSString *)example animated:(BOOL)animated;
 (void)setExample:(NSString *) example animated:(BOOL) animated;
@@ -227,7 +227,7 @@ A method’s opening bracket should be on the following line and flush left. Cod
 In all cases, the closing bracket is always on a new line by itself.
 
 ###### RIGHT:
-``` Objective-C
+```objective-c
 - (NSString *)foo
 {
     return @"foo";
@@ -235,7 +235,7 @@ In all cases, the closing bracket is always on a new line by itself.
 ```
 
 ###### WRONG:
-``` Objective-C
+```objective-c
 - (NSString *)foo {
     return @"foo";
 }
@@ -244,7 +244,7 @@ In all cases, the closing bracket is always on a new line by itself.
 Code within an ```if``` or ```for``` statement should aways be enclosed in brackets, even if not required by the compiler.
 
 ###### RIGHT:
-``` Objective-C
+```objective-c
 if (timeToGetCoffee) {
     [self buyCoffee];
     [self chugIt];
@@ -255,7 +255,7 @@ else {
 ```
 
 ###### WRONG:
-``` Objective-C
+```objective-c
 if (timeToGetCoffee)
 {
     [self buyCoffee];
@@ -266,7 +266,7 @@ else
 ```
 
 ###### WRONG:
-``` Objective-C
+```objective-c
 if (timeToGetCoffee)
 {
     [self buyCoffee];
@@ -279,7 +279,7 @@ if (timeToGetCoffee)
 #### Switch tests:
 
 ###### RIGHT:
-``` Objective-C
+```objective-c
 switch (input)
     case 1:
         [self buyCoffee];
@@ -302,12 +302,12 @@ switch (input)
 Keywords such as if, while, do, switch, etc. should have a space after them. There should be no space following the opening parenthesis or before the closing parenthesis.
 
 ###### RIGHT:
-``` Objective-C
+```objective-c
 if (timeToGetCoffee) {
 ```
 
 ###### WRONG:
-``` Objective-C
+```objective-c
 if(timeToGetCoffee){
 if ( timeToGetCoffee ) {
 ```
@@ -315,13 +315,13 @@ if ( timeToGetCoffee ) {
 Spaces are also used in the  @property declarations.
 
 ###### RIGHT:
-``` Objective-C
+```objective-c
 @property (strong, nonatomic) UIViewController *viewController;
 @property (strong, nonatomic, getter = isLoading) BOOL loading;
 ```
 
 ###### WRONG:
-``` Objective-C
+```objective-c
 @property(nonatomic,strong) UIViewController *viewController;
 @property(strong,nonatomic,getter=isLoading) BOOL loading;
 ```
@@ -329,12 +329,12 @@ Spaces are also used in the  @property declarations.
 C functions should not use a space before the opening parenthesis. However, spaces should be used between parameters.
 
 ###### RIGHT:
-``` Objective-C
+```objective-c
 CGRect frame = CGRectMake(10.0f, 20.0f, 15.0f, 15.0f);
 ```
 
 ###### WRONG:
-``` Objective-C
+```objective-c
 CGRect frame = CGRectMake (10.0f, 20.0f, 15.0f, 15.0f);
 CGRect frame = CGRectMake(10.0f,20.0f,15.0f,15.0f);
 ```
@@ -344,13 +344,13 @@ CGRect frame = CGRectMake(10.0f,20.0f,15.0f,15.0f);
 Use dot notation to get and set properties. Do not use dot notation for functions.
 
 ###### RIGHT:
-``` Objective-C
+```objective-c
 UIView *view = self.view;
 NSInteger total = [objectsArray count];
 ```
 
 ###### WRONG:
-``` Objective-C
+```objective-c
 UIView *view = [self view];
 NSInteger total = objectsArray.count;
 ```
@@ -362,12 +362,12 @@ Use ```NSInteger``` instead of ```int```, ```BOOL``` instead of ```Boolean```, e
 Use ```CGFloat``` instead of ```float``` or ```double``` when working with views, drawing, or anywhere that Apple specifies a ```CGFloat``` value. For clarity, hard-code values to ```CGFloat``` using one decimal place and the float notation. Do not omit the leading zero in values less than one or the trailing zero for fractal values.
 
 ###### RIGHT:
-``` Objective-C
+```objective-c
 CGFloat top = 23.0f;
 ```
 
 ###### WRONG:
-``` Objective-C
+```objective-c
 CGFloat top = 23;
 CGFloat top = 23f;
 CGFloat top = 23.f;
@@ -380,13 +380,13 @@ Objective-C uses ```YES``` and ```NO``` for Boolean variables. Therefore, the us
 Don’t directly access structure or object elements if getters & setters are available, except in ```-init``` and ```-dealloc``` methods, or when overriding accessor methods.
 
 ###### RIGHT:
-``` Objective-C
+```objective-c
 NSString *string = self.title;
 CGPoint point = CGPointMake(10.0f, 20.0f);
 ```
 
 ###### WRONG:
-``` Objective-C
+```objective-c
 NSString *string = _title;
 CGPoint point = {10.0f, 20.0f};
 ```
@@ -396,24 +396,24 @@ CGPoint point = {10.0f, 20.0f};
 Instance names should be descriptive of what they represent. Single letter variable names should never be used, even for incrementers. If it’s an index, name it “index.”
 
 ###### RIGHT:
-``` Objective-C
+```objective-c
 - (void)somethingDidHappen:(NSNotification *)notification
 ```
 
 ###### WRONG:
-``` Objective-C
+```objective-c
 - (void)somethingDidHappen:(NSNotification *)notif
 ```
 
 Always use consistent names. A property that does the same thing in two different classes shouldn’t be called postDictionary in one class and updateDictionary in another class. Use the same variable or property names used in the Cocoa libraries when appropriate.
 
 ###### RIGHT:
-``` Objective-C
+```objective-c
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 ```
 
 ###### WRONG:
-``` Objective-C
+```objective-c
 @property (strong, nonatomic) IBOutlet UITableView *gamesTableView;
 ```
 
@@ -438,13 +438,13 @@ Even for simple variables like Booleans (BOOL) or integers (NSInteger), use prop
 Xcode no longer requires ```@synthesize``` statements. Use them only if you require a unique instance variable name. When using ```@synthesize``` and ```@dynamic```, place each one on a single line.
 
 ###### RIGHT:
-``` Objective-C
+```objective-c
 @synthesize parentViewController = _readWriteParentViewController;
 @dynamic nameLabel;
 ```
 
 ###### WRONG:
-``` Objective-C
+```objective-c
 @synthesize fullName = _fullName;
 @synthesize nameLabel;
 @dynamic nameLabel, addressLabel;
@@ -453,24 +453,24 @@ Xcode no longer requires ```@synthesize``` statements. Use them only if you requ
 Except in ```-init``` and ```-dealloc``` methods, always use accessor methods, whether hard-coded (@dynamic) or synthesized, when setting and getting class instance variables.
 
 ###### RIGHT:
-``` Objective-C
+```objective-c
 self.aProperty = something;
 ```
 
 ###### WRONG:
-``` Objective-C
+```objective-c
 _anInstanceVariable = something;
 ```
 
 Properties that conform to ```NSCopying``` should generally copy rather than retain the value.
 
 ###### RIGHT:
-``` Objective-C
+```objective-c
 @property (copy, nonatomic) NSString *name;
 ```
 
 ###### WRONG:
-``` Objective-C
+```objective-c
 @property (strong, nonatomic) NSString *name;
 ```
 
@@ -479,13 +479,13 @@ Properties that conform to ```NSCopying``` should generally copy rather than ret
 Do not use the (id)sender parameter in an IBAction method signature unless it’s needed. If it is needed, you can specify the parameter type (e.g. UIButton) rather than using id. Use id only when creating very generic actions where you don’t know in advance the type of control that will trigger it, but still need a reference to it.
 
 ###### RIGHT:
-``` Objective-C
+```objective-c
 - (IBAction)beginUpdate;
 - (IBAction)beginUpdate:(UIButton *)button;
 ```
 
 ###### WRONG (mostly):
-``` Objective-C
+```objective-c
 - (IBAction)beginUpdate:(id)sender;
 ```
 
@@ -494,14 +494,14 @@ Do not use the (id)sender parameter in an IBAction method signature unless it’
 Compare objects to nil, rather than just testing the object directly. This makes it obvious that the property is an object, as opposed to a Boolean value.
 
 ###### RIGHT:
-``` Objective-C
+```objective-c
 if (anObject == nil) {
     ....
 }
 ```
 
 ###### WRONG:
-``` Objective-C
+```objective-c
 if (anObject) {
     ....
 }
@@ -510,14 +510,14 @@ if (anObject) {
 When testing the existence of an object, nil belongs to the right of the ```==``` operator.
 
 ###### RIGHT:
-``` Objective-C
+```objective-c
 if (anObject == nil) {
     ....
 }
 ```
 
 ###### WRONG:
-``` Objective-C
+```objective-c
 if (nil == anObject) {
     ....
 }
@@ -533,7 +533,7 @@ Now that we’re using ARC, we’re no setting the object’s instance variables
 Either of these forms of block indentation is acceptable:
 
 ###### RIGHT:
-``` Objective-C
+```objective-c
 [UIView animateWithDuration:0.3f animations:^{
      containerView.alpha = 1.0f;
 }];
@@ -555,13 +555,13 @@ Unnecessary/unused code from Xcode templates should also be completely removed f
 Use spaces around logical and arithmetic operators. However, no space should be used before the ```++``` and ```--```  operators.
 
 ###### RIGHT:
-``` Objective-C
+```objective-c
 frame.origin.x = truncf((contentRect.size.width - frame.size.width) / 2);
 count++;
 ```
 
 ###### WRONG:
-``` Objective-C
+```objective-c
 frame.origin.x=truncf((contentRect.size.width-frame.size.width) /2);
 count ++;
 ```
@@ -577,12 +577,12 @@ Do not use all uppercase letters (that’s for creating preprocessor constants).
 Do not use ```#define``` to create constants.
 
 Integers, floats, and Boolean constants should look something like this:
-``` Objective-C
+```objective-c
 const CGFloat XXXClassNameBackgroundAlpha = 0.5f; 
 ```
 
 String constants should look like this:
-``` Objective-C
+```objective-c
 NSString * const XXXClassNameCompanyNameKey = @"CompanyName";
 ```
 
@@ -615,20 +615,20 @@ Comments should be rare. Code is easier to read than comments. Comments go stale
 However, comment code that isn’t self-explanatory, or that deviates from what another coder might expect to see.
 
 ###### RIGHT:
-``` Objective-C
+```objective-c
 // We are doing this in a strange way because the normal solution caused the monster's
 // eyes to turn green. Therefore this solution is the correct one.
 ```
 
 ###### WRONG:
-``` Objective-C
+```objective-c
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 ```
 
 Do not comment closing parenthesis.
 
 ###### WRONG:
-``` Objective-C
+```objective-c
 if (something) {
     ...
 }  // if
@@ -638,7 +638,7 @@ Code that is no longer needed should be completely removed from the source files
 
 ###### Example
 The following pages show examples of properly formatted .h and .m files.
-``` Objective-C
+```objective-c
 //
 //  XXXIconButton.h
 //
@@ -652,7 +652,7 @@ The following pages show examples of properly formatted .h and .m files.
 @end
 ```
 
-``` Objective-C
+```objective-c
 //
 //  XXXIconButton.m
 //
