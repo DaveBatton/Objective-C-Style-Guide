@@ -83,9 +83,9 @@ Separate methods in the class implementation into groups using these #pragma mar
 #pragma mark - (superclass name)
 #pragma mark - Public
 #pragma mark - Private
-#pragma mark - Actions
 #pragma mark - Notifications
 #pragma mark - (delegate protocol name)
+#pragma mark - Actions
 #pragma mark - Accessors
 ```
 
