@@ -7,11 +7,11 @@ This is my preferred Objective-C style guide, in Pages (source) and PDF formats.
 
 Any team of developers should be working from a single playbook when it comes to the code style used. This makes the code more maintainable and easier to consume.
 
-Often our customers will have access to our source code. Ideally an entire project will appear as if its been written by a single person. Or at least reviewed and edited to be consistent throughout.
+Often our customers will have access to our source code. Ideally an entire project will appear as if it's been written by a single person. Or at least reviewed and edited to be consistent throughout.
 
 The original version of this document was based on (stolen from) bits of these documents:
 
-* Apples Coding Guidelines for Cocoa (http://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/CodingGuidelines/CodingGuidelines.html)
+* Apple's Coding Guidelines for Cocoa (http://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/CodingGuidelines/CodingGuidelines.html)
 
 * WebKit Style Guide (http://www.webkit.org/coding/coding-style.html)
 
@@ -23,15 +23,15 @@ It has since been updated through discussions and meetings with other developers
 
 #### Suggestions
 
-Generally speaking, we want to format our code the way Apple does. This will make it easier for other iOS programmers to read. It will also be more consistent than just making up your own style as you go along. If theres confusion about coding style, find an example of similar code from Apple. Preferably from their documentation, not from a sample project (many of which dont follow Apples standards). This is just a guideline. Apple sometimes contradicts itself.
+Generally speaking, we want to format our code the way Apple does. This will make it easier for other iOS programmers to read. It will also be more consistent than just making up your own style as you go along. If there's confusion about coding style, find an example of similar code from Apple. Preferably from their documentation, not from a sample project (many of which don't follow Apple's standards). This is just a guideline. Apple sometimes contradicts itself.
 
 Whenever you work in a source file, leave it cleaner than when you found it. If you find code that violates this guide, correct it. If the code is outdated then update it.
 
-When theres a choice of formatting styles, follow the convention already used in a given source file.
+When there's a choice of formatting styles, follow the convention already used in a given source file.
     
 Use the static analyzer. It does some very useful style checking.
 
-Ask somebody to review your code. As soon as youre aware somebody is going to critique your code, youll start writing better code.
+Ask somebody to review your code. As soon as you're aware somebody is going to critique your code, you'll start writing better code.
 
 These conventions are not intended to be applied to C, C++, or Swift code within Objective-C projects.
 
@@ -39,10 +39,10 @@ These conventions are not intended to be applied to C, C++, or Swift code within
 
 Use spaces, not tabs, to indent code. The indent size is 4 spaces. Code editors should be configured to convert tabs that you type to 4 spaces.
 
-Specifically, wed like you to configure Xcode to handle indentation as shown here (from Xcode 4.4):
+Specifically, we'd like you to configure Xcode to handle indentation as shown here (from Xcode 4.4):
 ![Xcode Indentation Preferences](/resources/Screen Shot 2012-08-08 at 10.46.36 PM.png)
 
-If you want to wrap a long line of code then make sure it is colon-aligned per Xcodes automatic formatting.
+If you want to wrap a long line of code then make sure it is colon-aligned per Xcode's automatic formatting.
 
 #### Blank Lines
 
@@ -194,17 +194,17 @@ Note that the first parameter is a connection, not an error. So better:
 - (void)handleConnection:(ABCHTTPURLConnection *)connection withError:(NSError *)error
 ```
 
-Apple generally doesnt use with when returning an error value. Better still:
+Apple generally doesn't use "with" when returning an error value. Better still:
 ```objective-c
 - (void)handleConnection:(ABCHTTPURLConnection *)connection error:(NSError *)error
 ```
 
-This is a delegate method. Normally these contain will or did, and rarely start with handle:
+This is a delegate method. Normally these contain "will" or "did", and rarely start with "handle":
 ```objective-c
 - (void)connection:(ABCHTTPURLConnection *)connection didFailWithError:(NSError *)error
 ```
 
-Turns out this is exactly how Apple names this method in the NSURLConnection class. So anyone thats familiar with Cocoa should understand what this method does.
+Turns out this is exactly how Apple names this method in the NSURLConnection class. So anyone that's familiar with Cocoa should understand what this method does.
 
 Method names should never begin with the underscore character. This format is reserved for use by Apple.
 
@@ -228,7 +228,7 @@ Method signatures in the class implementation should never be followed by a semi
 
 #### Curly Brackets
 
-A methods opening bracket should be on the following line and flush left. Code should be indented 4 spaces from the opening bracket. This is the only place where the opening bracket is placed at the beginning of a new line. In all other cases, the opening bracket is placed inline.
+A method's opening bracket should be on the following line and flush left. Code should be indented 4 spaces from the opening bracket. This is the only place where the opening bracket is placed at the beginning of a new line. In all other cases, the opening bracket is placed inline.
 
 In all cases, the closing bracket is always on a new line by itself.
 
@@ -383,7 +383,7 @@ CGFloat top = 0f;
 
 Objective-C uses `YES` and `NO` for Boolean variables. Therefore, the use of `True` and `False` are incorrect in Objective-C code.
 
-Dont directly access structure or object elements if getters & setters are available, except in `-init` and `-dealloc` methods, or when overriding accessor methods.
+Don't directly access structure or object elements if getters & setters are available, except in `-init` and `-dealloc` methods, or when overriding accessor methods.
 
 ###### RIGHT:
 ```objective-c
@@ -399,7 +399,7 @@ CGPoint point = {10.0f, 20.0f};
 
 #### Variable/Property/Parameter Names
 
-Instance names should be descriptive of what they represent. Single letter variable names should never be used, even for incrementers. If its an index, name it index.
+Instance names should be descriptive of what they represent. Single letter variable names should never be used, even for incrementers. If it's an index, name it "index."
 
 ###### RIGHT:
 ```objective-c
@@ -411,7 +411,7 @@ Instance names should be descriptive of what they represent. Single letter varia
 - (void)somethingDidHappen:(NSNotification *)notif
 ```
 
-Always use consistent names. A property that does the same thing in two different classes shouldnt be called postDictionary in one class and updateDictionary in another class. Use the same variable or property names used in the Cocoa libraries when appropriate.
+Always use consistent names. A property that does the same thing in two different classes shouldn't be called postDictionary in one class and updateDictionary in another class. Use the same variable or property names used in the Cocoa libraries when appropriate.
 
 ###### RIGHT:
 ```objective-c
@@ -423,11 +423,11 @@ Always use consistent names. A property that does the same thing in two differen
 @property (strong, nonatomic) IBOutlet UITableView *gamesTableView;
 ```
 
-In general, you shouldnt abbreviate names. However, some abbreviations are either well established or have been used in the past, and so you may continue to use them. See Apples Coding Guidelines for Cocoa document for a list of acceptable abbreviations.
+In general, you shouldn't abbreviate names. However, some abbreviations are either well established or have been used in the past, and so you may continue to use them. See Apple's Coding Guidelines for Cocoa document for a list of acceptable abbreviations.
 
 Never use underscores within variable, property, or parameter names.
 
-Never, ever prefix any variable with my.
+Never, ever prefix any variable with "my."
 
 #### Automatic Reference Counting
 
@@ -482,7 +482,7 @@ Properties that conform to `NSCopying` should generally copy rather than retain 
 
 #### IBActions
 
-Do not use the `(id)sender` parameter in an IBAction method signature unless its needed. If it is needed, you can specify the parameter type (e.g. UIButton) rather than using `id`. Use `id` only when creating very generic actions where you dont know in advance the type of control that will trigger it, but still need a reference to it.
+Do not use the `(id)sender` parameter in an IBAction method signature unless it's needed. If it is needed, you can specify the parameter type (e.g. UIButton) rather than using `id`. Use `id` only when creating very generic actions where you don't know in advance the type of control that will trigger it, but still need a reference to it.
 
 ###### RIGHT:
 ```objective-c
@@ -531,7 +531,7 @@ if (nil == anObject) {
 
 #### - dealloc
 
-Now that were using ARC, were no setting the objects instance variables to `nil` in the `-dealloc` method. In most cases the method should be removed.
+Now that we're using ARC, we're no setting the object's instance variables to `nil` in the `-dealloc` method. In most cases the method should be removed.
 
 
 #### Block Indentation
@@ -574,9 +574,9 @@ count ++;
 
 #### Constants
 
-Follow the Constants section in Apples Introduction to Coding Guidelines for Cocoa when naming constants. Specifically:
+Follow the Constants section in Apple's Introduction to Coding Guidelines for Cocoa when naming constants. Specifically:
 
-Constants should begin with the three-letter project prefix. Do not begin constants with the letter k in Objective-C code (thats a C thing). Do not use all uppercase letters (thats for creating preprocessor constants). 
+Constants should begin with the three-letter project prefix. Do not begin constants with the letter "k" in Objective-C code (that's a C thing). Do not use all uppercase letters (that's for creating preprocessor constants). 
 
 Do not use `#define` to create constants.
 
@@ -592,21 +592,21 @@ NSString * const XXXClassNameCompanyNameKey = @"CompanyName";
 
 #### App Delegate
 
-The application delegate should be named XXXAppDelegate, where XXX is the projects three-letter prefix. It should not be named Project_AppDelegate or anything else that Xcode might suggest.
+The application delegate should be named XXXAppDelegate, where XXX is the project's three-letter prefix. It should not be named Project_AppDelegate or anything else that Xcode might suggest.
 
 #### Resource Files
 
-Resource (.xib) files shared by multiple classes should be saved in the projects Resource folder and placed in the Resource folder (preferably in a subfolder for better organization) in Xcodes Project Navigator.
+Resource (.xib) files shared by multiple classes should be saved in the project's Resource folder and placed in the Resource folder (preferably in a subfolder for better organization) in Xcode's Project Navigator.
 
-Resource files used by a single class should be placed alongside the .h and .m files in Xcodes Project Navigator. The actual file should be saved in the Classes folder with the associated class files. The resource file name should usually end in view menu, window or cell. View controller xib files should not end with the word controller.
+Resource files used by a single class should be placed alongside the .h and .m files in Xcode's Project Navigator. The actual file should be saved in the Classes folder with the associated class files. The resource file name should usually end in "view" "menu", "window" or "cell". View controller xib files should not end with the word "controller."
 
-Resource file names (images, xibs, etc.) should begin with the projects three-letter project code. Resources associated with a specific class should begin with the class name.
+Resource file names (images, xibs, etc.) should begin with the project's three-letter project code. Resources associated with a specific class should begin with the class name.
 
-Selected or highlighted image variants should have the same file name as the normal image, with a -selected extension. Generally we just use -selected for both selected and highlighted image variations, unless both selected and highlighted variants are needed.
+Selected or highlighted image variants should have the same file name as the normal image, with a "-selected" extension. Generally we just use "-selected" for both selected and highlighted image variations, unless both selected and highlighted variants are needed.
 
-If multiple sizes of an image are needed, append generic adjectives such as large or small (or other names recommended by Apple), rather than specific ones such as login or accounts. This allows the images to be more easily used in other areas of the application.
+If multiple sizes of an image are needed, append generic adjectives such as "large" or "small" (or other names recommended by Apple), rather than specific ones such as "login" or "accounts." This allows the images to be more easily used in other areas of the application.
 
-If an image or xib file is specific to iPhone or iPad, use the ~iphone or ~ipad filename extension (even if the project is currently designed for only one platform). Omit this extension only if the resource is intended to be used on both platforms.
+If an image or xib file is specific to iPhone or iPad, use the "~iphone" or "~ipad" filename extension (even if the project is currently designed for only one platform). Omit this extension only if the resource is intended to be used on both platforms.
 
 #### Importing Headers
 
@@ -614,9 +614,9 @@ Framework imports should be in the Prefix.pch file and not in the individual cla
 
 #### Comments
 
-Comments should be rare. Code is easier to read than comments. Comments go stale, code doesnt. If the code is self-explanatory (as it should be when descriptive variable and method names are used) then comments are not necessary.
+Comments should be rare. Code is easier to read than comments. Comments go stale, code doesn't. If the code is self-explanatory (as it should be when descriptive variable and method names are used) then comments are not necessary.
 
-However, comment code that isnt self-explanatory, or that deviates from what another coder might expect to see.
+However, comment code that isn't self-explanatory, or that deviates from what another coder might expect to see.
 
 ###### RIGHT:
 ```objective-c
@@ -722,7 +722,7 @@ static CGFloat const XXXIconButtonPadding = -2.0f;  // Padding between the image
     CGRect titleRect = [super titleRectForContentRect:contentRect];
 
     titleRect.origin.x = 0.0f;
-    titleRect.origin.y = truncf((contentRect.size.height - imageRect.size.height -titleRect.size.height - XXXIconButtonPadding) / 2) + imageRect.size.height +XXXIconButtonPadding;
+    titleRect.origin.y = truncf((contentRect.size.height - imageRect.size.height - titleRect.size.height - XXXIconButtonPadding) / 2) + imageRect.size.height + XXXIconButtonPadding;
     titleRect.size.width = self.bounds.size.width;
     
     return titleRect;
